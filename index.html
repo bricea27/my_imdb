@@ -2,29 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Movie Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyMDb</title>
   <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
 
-
+  <header>
+    <h1><a href="#home"> MyMDb </a></h1>
     <div class="search">
-      <input type="text" placeholder="Movie Title">
+      <input type="text" placeholder="Browse Titles">
       <button> Search </button>
     </div>
+  </header>
 
-
-  <section class="home">
-
+  <section id="home">
     <ul id="movies">
-
-
     </ul>
+  </section>
 
+  <section id="info">
+    <button id="close_info"> X </button>
+    <div class="info_wrapper">
+      <h2 id="movie_title">Movie Title</h2>
+      <h3 id="year"> (Year) </h3>
+      <p id="plot"> Enim laborum eiusmod culpa fugiat aliquip mollit. Ipsum esse culpa elit ipsum voluptate deserunt fugiat quis ipsum. Enim tempor cupidatat incididunt voluptate nisi cillum velit Lorem ad cillum do officia nisi veniam. Quis officia ea mollit ullamco non consectetur id ut sunt proident. Sint est anim nostrud id qui mollit elit non Lorem eu quis id est sit. Lorem aliquip et cillum in laboris adipisicing deserunt occaecat. Enim ullamco occaecat incididunt deserunt aliqua dolor deserunt deserunt enim. </p>
+      <h3 id="directors"> Directors: </h3>
+      <h3 id="writers"> Writers: </h3>
+      <h3 id="actors"> Stars: </h3>
+      <h3 id="rating"> IMDb Rating: </h3>
+
+    </div>
+    <div id="poster_wrapper">
+      <div id="info_poster">
+      </div>
+    </div>
   </section>
 
   <script src="main.js"></script>
+  <!-- Smooth Scrolling Function -->
 
 </body>
 </html>

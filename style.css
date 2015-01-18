@@ -68,7 +68,8 @@ html, body{
 
 body {
   font-size: 16px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  background: #fff;
 }
 
 section {
@@ -92,7 +93,7 @@ p {
   font-weight:  400;
   font-style:   normal;
   font-stretch: normal;
-  color: #000;
+  color: #fff;
 }
 
 h1,
@@ -104,31 +105,28 @@ h5 {
   font-style:   normal;
   font-stretch: normal;
   color: #1F1F1F;
-  line-height: 1.25em;
+  line-height: 1.5em;
 }
 
 
 h1 {
   font-size: 3em;
   line-height: 1.25em;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 1.5em;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  font-size: 2.25em;
+  font-weight: 700;
+  color: #f1c40f;
 }
 
 h3 {
   font-size: 1.75em;
-  text-align: center;
-  max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 60px;
-  color: #1F1F1F;
-  font-weight: 300;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 24px;
 }
 
 h4 {
@@ -143,14 +141,13 @@ h4 {
 a {
   color: #1F1F1F;
   text-decoration: none;
-  font-weight:  400;
   font-style:   normal;
   font-stretch: normal;
   cursor: pointer;
 }
 
 a:hover {
-  color: #1cbcc0;
+  color: #f1c40f;
 }
 
 img {
@@ -158,41 +155,57 @@ img {
   max-width: 100%;
 }
 
+p {
+  font-size: 1.25em;
+}
+
 /******* Header *******/
 header {
   width: 100%;
   height: 80px;
-  background: #000;
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+header h1 {
+  padding-left: 20px;
+  padding-top: 10px;
 }
 
 .search {
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 20px;
 }
 
 .search input {
   width: 200px;
   height: 30px;
-  padding: 5px;
   font-size: 1em;
+  border: 1px solid #1f1f1f;
+  display: inline-block;
+  padding: 5px;
+  outline: none;
 }
 
 .search button  {
   background:#a73f2d;
-  border:1px solid #241d13;
+  border: none;;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
-  font-size:15px;
-  font-weight:bold;
   height: 30px;
+  width: 60px;
   line-height: 30px;
+  font-size: 0.75em;
   text-decoration:none;
+  outline: none;
 }
 
 .search button:hover {
@@ -204,19 +217,138 @@ header {
 }
 
 /******* Home Section *******/
-.home {
-
+#home {
+  padding-top: 80px;
 }
 
 #movies li {
   width: 20%;
   height: 300px;
   float: left;
-  border: none;
+  background-size: cover !important;
+  border: 2px solid #fff;
 }
 
-#movies li img {
+#movies li:hover {
+  cursor: pointer;
+}
+
+/******* Info Section *******/
+
+#info {
   width: 100%;
   height: 100%;
-  border: none;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 100px;
+  display: none;
+}
+
+.info_wrapper {
+  width: 60%;
+  height: 100%;
+  padding: 20px;
+  float: right;
+  overflow: scroll;
+  position: relative;
+}
+
+h3 span {
+  display: block;
+  color: #f1c40f;
+}
+
+#close_info {
+  background: none;
+  border: 1px solid #fff;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: #fff;
+  border-radius: 100%;
+  font-size: 0.75em;
+  cursor: pointer;
+  position: absolute;
+  top: 95px;
+  left: 20px;
+}
+
+#close_info:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+
+#poster_wrapper {
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+#info_poster {
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  margin-top: 20px;
+}
+
+
+
+/* -- Breakpoint 1 960px
+------------------------------------------------------------- */
+@media only screen and (max-width: 960px) {
+
+  #movies li {
+    width: 33.333%;
+  }
+
+}
+
+
+/* -- Breakpoint 2 780px
+------------------------------------------------------------- */
+@media only screen and (max-width: 620px) {
+
+  header {
+    height: 100px;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: 2em;
+  }
+
+  #home {
+    padding-top: 100px;
+  }
+
+  .search {
+    width: 100%;
+    display: block;
+    padding-top: 30px;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 60px;
+  }
+
+
+  #movies li {
+    width: 50%;
+  }
+
+}
+
+
+/* -- Breakpoint 2 480px
+------------------------------------------------------------- */
+@media only screen and (max-width: 480px) {
+
+  #movies li {
+    width: 100%;
+  }
+
 }
