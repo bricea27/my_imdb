@@ -22,7 +22,7 @@ movie_list.forEach(function(title) {
     var parsed = JSON.parse(d);
     console.log(parsed);
     var imgUrl = '"' + parsed.Poster + '"';
-    poster.setAttribute("style", "background:url(" + imgUrl + ")");
+    poster.setAttribute('style', 'background:url(' + imgUrl + ')');
   });
 
   xhr.send();
