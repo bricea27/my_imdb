@@ -144,10 +144,18 @@ a {
   font-style:   normal;
   font-stretch: normal;
   cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 a:hover {
-  color: #f1c40f;
+  color: #c0392b;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 img {
@@ -176,40 +184,57 @@ header {
 header h1 {
   padding-left: 20px;
   padding-top: 10px;
+  float: left;
 }
 
 .search {
-  position: absolute;
-  top: 25px;
-  right: 20px;
+  width: 320px;
+  height: 40px;
+  float: right;
+  margin-top: 20px;
+  margin: 20px;
+}
+
+.search span {
+  width: 320px;
+  height: 40px;
 }
 
 .search input {
-  width: 200px;
-  height: 30px;
-  font-size: 1em;
-  border: 1px solid #1f1f1f;
-  display: inline-block;
+  width: 240px;
+  height: 40px;
+  font-size: 1.25em;
+  border: 2px solid #ccc;
   padding: 5px;
   outline: none;
+  float: left;
 }
 
 .search button  {
-  background:#a73f2d;
+  background: #c0392b;
   border: none;;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  height: 30px;
-  width: 60px;
+  cursor: pointer;
+  color: #fff;
+  height: 40px;
+  width: 80px;
+  border-left: 4px solid #fff;
   line-height: 30px;
-  font-size: 0.75em;
-  text-decoration:none;
+  font-size: 1em;
+  text-decoration: none;
   outline: none;
+  float: left;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .search button:hover {
-  background-color:#b34332;
+  background-color: #e74c3c;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .search button:active {
   position:relative;
@@ -226,7 +251,6 @@ header h1 {
   height: 300px;
   float: left;
   background-size: cover !important;
-  border: 2px solid #fff;
 }
 
 #movies li:hover {
@@ -237,22 +261,21 @@ header h1 {
 #info {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: #000;
   z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 100px;
   display: none;
+  padding-top: 100px;
+  overflow: scroll;
 }
 
 .info_wrapper {
   width: 60%;
-  height: 100%;
   padding: 20px;
   float: right;
   position: relative;
-  overflow: scroll;
 }
 
 h3 span {
@@ -271,13 +294,32 @@ h3 span {
   font-size: 0.75em;
   cursor: pointer;
   position: absolute;
-  top: 95px;
+  top: 100px;
   left: 20px;
+  outline: none;
+  z-index: 9999;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 #close_info:hover {
   background: #fff;
   color: #000;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#close_info:focus {
+  background: #fff;
+  color: #000;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 #poster_wrapper {
@@ -304,12 +346,9 @@ h3 span {
     width: 33.333%;
   }
 
-  #info {
-    overflow: scroll;
-  }
-
   .info_wrapper {
     width: 100%;
+    padding-top: 40px;
   }
 
   #poster_wrapper {
@@ -330,12 +369,15 @@ h3 span {
 @media only screen and (max-width: 620px) {
 
   header {
-    height: 100px;
+    height: 120px;
   }
 
   header h1 {
     text-align: center;
     font-size: 2em;
+    margin: 0 auto;
+    float: none;
+    padding: 10px 0;
   }
 
   #home {
@@ -343,17 +385,28 @@ h3 span {
   }
 
   .search {
-    width: 100%;
     display: block;
-    padding-top: 30px;
     margin: 0 auto;
     text-align: center;
-    padding-left: 60px;
+    float: none;
   }
 
 
   #movies li {
     width: 50%;
+  }
+
+  #info {
+    padding-top: 140px;
+  }
+
+  #close_info {
+    top: 140px;
+  }
+
+  .info_wrapper {
+    width: 100%;
+    padding-top: 40px;
   }
 
 }
