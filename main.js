@@ -5,8 +5,7 @@ var info = document.getElementById("info");
 var logo = document.getElementById("logo");
 var close_info = document.getElementById("close_info");
 
-var movie_list = ["The Shawshank Redemption", "The Godfather", "The Godfather: Part II", "Pulp Fiction", "The Good, the Bad and the Ugly", "The Lord of the Rings: The Return of the King", "12 Angry Men", "Schindler's List", "Forrest Gump", "One Flew Over the Cuckoo's Nest", "Goodfellas", "Episode IV - A New Hope", "It's a Wonderful Life", "The Silence of the Lambs", "City Lights", "Casablanca", "Saving Private Ryan", "Raiders of the Lost Ark", "Rear Window"];
-//"Psycho", "Sunset Blvd.", "The Green Mile", "The Pianist", "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", "Gladiator", "Apocalypse Now", "North by Northwest", "Citizen Kane", "Vertigo", "Double Indemnity", "Braveheart", "To Kill a Mockingbird", "Lawrence of Arabia", "A Clockwork Orange", "Taxi Driver", "Singin' in the Rain", "Amadeus", "The Treasure of the Sierra Madre", "The Apartment", "The Third Man", "Some Like it Hot", "2001: A Space Odyssey", "Mr. Smith Goes to Washington", "Unforgiven", "On the Waterfront", "Raging Bull", "Chinatown", "The Bridge on the River Kwai", "Good Will Hunting", "It Happened One Night", "The Best Years of Our Lives", "Gone With the Wind", "The Maltese Falcon", "The Deer Hunter", "Fargo", "Network", "Butch Cassidy and the Sundance Kid", "The Grapes of Wrath", "Platoon", "Annie Hall", "Ben-Hur", "The Wizard of Oz", "Gandhi", "High Noon", "The Philadelphia Story", "Jaws", "Rocky", "The King's Speech", "A Streetcar Named Desire", "The Graduate", "All Quiet on the Western Front", "Patton", "The Exorcist", "Rain Man", "Doctor Zhivago", "Dances with Wolves", "The Sound of Music", "Midnight Cowboy", "The African Queen", "Stagecoach", "My Fair Lady", "E.T. the Extra-Terrestrial", "A Place in the Sun", "Mutiny on the Bounty", "The French Connection", "Rebel Without a Cause", "Yankee Doodle Dandy", "From Here to Eternity", "Nashville", "Wuthering Heights", "Shane", "Titanic", "Giant", "Close Encounters of the Third Kind", "West Side Story", "American Graffiti", "Terms of Endearment", "Tootsie", "An American in Paris", "Out of Africa"];
+var movie_list = ["The Shawshank Redemption", "The Godfather", "The Godfather: Part II", "Pulp Fiction", "The Good, the Bad and the Ugly", "The Lord of the Rings: The Return of the King", "12 Angry Men", "Schindler's List", "Forrest Gump", "One Flew Over the Cuckoo's Nest", "Goodfellas", "Episode IV - A New Hope", "It's a Wonderful Life", "The Silence of the Lambs", "City Lights", "Casablanca", "Saving Private Ryan", "Raiders of the Lost Ark", "Rear Window", "Psycho", "Sunset Blvd.", "The Green Mile", "The Pianist", "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", "Gladiator", "Apocalypse Now", "North by Northwest", "Citizen Kane", "Vertigo", "Double Indemnity", "Braveheart", "To Kill a Mockingbird", "Lawrence of Arabia", "A Clockwork Orange", "Taxi Driver", "Singin' in the Rain", "Amadeus", "The Treasure of the Sierra Madre", "The Apartment", "The Third Man", "Some Like it Hot", "2001: A Space Odyssey", "Mr. Smith Goes to Washington", "Unforgiven", "On the Waterfront", "Raging Bull", "Chinatown", "The Bridge on the River Kwai", "Good Will Hunting", "It Happened One Night", "The Best Years of Our Lives", "Gone With the Wind", "The Maltese Falcon", "The Deer Hunter", "Fargo", "Network", "Butch Cassidy and the Sundance Kid", "The Grapes of Wrath", "Platoon", "Annie Hall", "Ben-Hur", "The Wizard of Oz", "Gandhi", "High Noon", "The Philadelphia Story", "Jaws", "Rocky", "The King's Speech", "A Streetcar Named Desire", "The Graduate", "All Quiet on the Western Front", "Patton", "The Exorcist", "Rain Man", "Doctor Zhivago", "Dances with Wolves", "The Sound of Music", "Midnight Cowboy", "The African Queen", "Stagecoach", "My Fair Lady", "E.T. the Extra-Terrestrial", "A Place in the Sun", "Mutiny on the Bounty", "The French Connection", "Rebel Without a Cause", "Yankee Doodle Dandy", "From Here to Eternity", "Nashville", "Wuthering Heights", "Shane", "Titanic", "Giant", "Close Encounters of the Third Kind", "West Side Story", "American Graffiti", "Terms of Endearment", "Tootsie", "An American in Paris", "Out of Africa"];
 
 movie_list.forEach(function(title) {
 
@@ -26,6 +25,14 @@ movie_list.forEach(function(title) {
     console.log(parsed);
     var imgUrl = '"' + parsed.Poster + '"';
     li.setAttribute('style', 'background:url(' + imgUrl + ') no-repeat');
+
+    li.onmouseenter = function(){
+      li.innerHTML = '<h4 class="animated fadeIn">' + parsed.Title + '</h4>';
+    };
+
+    li.onmouseleave = function(){
+      li.innerHTML = '<h4 class="animated fadeOut">' + parsed.Title + '</h4>';
+    };
 
     li.addEventListener("click", function(){
       info.style.display="block";
@@ -61,6 +68,7 @@ movie_list.forEach(function(title) {
   xhr.send();
 
   ul.appendChild(li);
+
 });
 
 
