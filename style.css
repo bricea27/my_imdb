@@ -205,7 +205,7 @@ header h1 {
   width: 240px;
   height: 40px;
   font-size: 1.25em;
-  border: 2px solid #ccc;
+  border: 2px solid #ecf0f1;
   padding: 5px;
   outline: none;
   float: left;
@@ -322,7 +322,8 @@ h3 span {
 }
 
 #close_info:hover {
-  background: #fff;
+  background: #c0392b;
+  border: 1px solid #c0392b;
   color: #000;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -383,6 +384,17 @@ h3 span {
 
 /* -- Breakpoint 2 780px
 ------------------------------------------------------------- */
+@media only screen and (max-width: 780px) {
+
+  #movies li {
+    width: 50%;
+  }
+
+}
+
+
+/* -- Breakpoint 3 620px
+------------------------------------------------------------- */
 @media only screen and (max-width: 620px) {
 
   header {
@@ -408,11 +420,6 @@ h3 span {
     float: none;
   }
 
-
-  #movies li {
-    width: 50%;
-  }
-
   #info {
     padding-top: 140px;
   }
@@ -429,12 +436,9 @@ h3 span {
 }
 
 
-/* -- Breakpoint 2 480px
+/* -- Breakpoint 4 480px
 ------------------------------------------------------------- */
 @media only screen and (max-width: 480px) {
 
-  #movies li {
-    width: 100%;
-  }
 
 }
